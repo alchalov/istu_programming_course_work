@@ -8,15 +8,16 @@ namespace alchalov {
     {
     public:
         Task(); // создание пустого задания - не выдано, не оценено
-        Task(int); // создание задания с оценкой - выдано, оценено
 
+        void setStatus(const bool);
         void assign(); // выдать задание
-        void setScore(int); // выставить оценку
+        void setScore(const int); // выставить оценку
+        void assignScore(const int); // выставить оценку, если задание было выдано
 
         bool isAssigned(); // вернуть статус - задание назначено? да : нет
         int getScore(); // вернуть оценку
     private:
-        bool assigned; // статус - задание назначена? да : нет
+        bool assignedStatus; // статус - задание назначена? да : нет
         int score; // оценка
     };
 

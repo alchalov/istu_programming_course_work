@@ -3,13 +3,20 @@
 namespace alchalov {
 
     // конструктор умолчаний - задание не выдано, задание не проверено
-    Task::Task(): assigned(false), score(0){};
+    Task::Task(): assignedStatus(false), score(0){};
+
+
+    // установка статуса задания
+    void Task::setStatus(const bool status)
+    {
+        assignedStatus = status;
+    }
 
     // если задание не выдано, то выдать задание
     void Task::assign()
     {
         if (!isAssigned()){
-            assigned = true;
+            assignedStatus = true;
         }
     };
 
@@ -35,7 +42,7 @@ namespace alchalov {
     // вернуть статус - задание выдано? да : нет
     bool Task::isAssigned()
     {
-        return assigned;
+        return assignedStatus;
     };
 
     // вернуть оценку

@@ -14,10 +14,19 @@ class StudentTasks
 public:
     StudentTasks();
     StudentTasks(const int, const std::string, const int, const std::vector<Task*>);
+
     void setRecordNumber(const int);
-    void setName(const int);
+    void setStudentName(const std::string);
     void setVariantNumber(const int);
     void setTasks(const std::vector<Task*>);
+    void setAssignStatusOfTask(const int, const bool);
+    void setScoreOfTask(const int, const int);
+
+    int getRecordNumber();
+    std::string getStudentName();
+    int getVariantNumber();
+    bool getAssignStatusOfTask(const int);
+    int getScoreOfTask(const int);
 
 private:
     int recordNumber;
