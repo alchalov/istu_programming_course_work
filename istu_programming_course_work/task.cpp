@@ -5,7 +5,6 @@ namespace alchalov {
 // конструктор умолчаний - задание не выдано, задание не проверено
 Task::Task(): assignedStatus(false), score(0){};
 
-
 // установка статуса задания
 void Task::setStatus(const bool status)
 {
