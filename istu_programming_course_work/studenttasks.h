@@ -1,10 +1,7 @@
 #ifndef STUDENTTASKS_H
 #define STUDENTTASKS_H
 
-#include <vector>
-#include <string>
-
-#include "task.h"
+#include <QString>
 
 namespace alchalov {
 
@@ -13,26 +10,52 @@ class StudentTasks
 {
 public:
     StudentTasks();
-    StudentTasks(const int, const std::string, const int, const std::vector<Task*>);
+    StudentTasks(const QString, // номер зачётки
+                 const QString, // фамилия И.О.
+                 const QString, // вариант
+                 const QString, // статус задания 1
+                 const QString, // оценка за задание 1
+                 const QString, // статус задания 2
+                 const QString, // оценка за задание 2
+                 const QString, // статус задания 3
+                 const QString); // оценка за задание 3
+    // сеттеры
+    void setRecordNumber(const QString);
+    void setStudentName(const QString);
+    void setVariantNumber(const QString);
+    void setTask1Status(const QString);
+    void setTask2Status(const QString);
+    void setTask3Status(const QString);
+    void setTask1Score(const QString);
+    void setTask2Score(const QString);
+    void setTask3Score(const QString);
 
-    void setRecordNumber(const int);
-    void setStudentName(const std::string);
-    void setVariantNumber(const int);
-    void setTasks(const std::vector<Task*>);
-    void setAssignStatusOfTask(const int, const bool);
-    void setScoreOfTask(const int, const int);
+    // геттеры
+    QString getRecordNumber();
+    QString getVariantNumber();
+    QString getStudentName();
+    QString getTask1Status();
+    QString getTask2Status();
+    QString getTask3Status();
+    QString getTask1Score();
+    QString getTask2Score();
+    QString getTask3Score();
 
-    int getRecordNumber();
-    std::string getStudentName();
-    int getVariantNumber();
-    bool getAssignStatusOfTask(const int);
-    int getScoreOfTask(const int);
+    // методы
+    QString sumScores(); // подсчёт суммы очков
 
 private:
-    int recordNumber;
-    std::string studentName;
-    int variantNumber;
-    std::vector<Task*> tasks;
+    // аттрибуты класса (поля для хранения данных)
+    QString recordNumber;
+    QString studentName;
+    QString variantNumber;
+    QString task1Status;
+    QString task1Score;
+    QString task2Status;
+    QString task2Score;
+    QString task3Status;
+    QString task3Score;
+
 };
 
 } // namespace alchalov

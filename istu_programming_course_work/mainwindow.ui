@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Курсовая работа по программированию Вариант 6</string>
+   <string>Курсовая работа по программированию Вариант 6 Чалов А.Л. ЭВМбз18-1</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="tableWidget">
@@ -51,8 +51,6 @@
      <string>Файл</string>
     </property>
     <addaction name="actionOpen"/>
-    <addaction name="actionSave"/>
-    <addaction name="actionSaveAs"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
@@ -60,15 +58,16 @@
     <property name="title">
      <string>Отчёты</string>
     </property>
-    <addaction name="actionStudent_info_by_recod_number"/>
-    <addaction name="actionStudents_with_current_task_number"/>
-    <addaction name="actionStudents_with_current_variant_and_score_sum"/>
-    <addaction name="actionStudents_with_current_unassigned_task"/>
+    <addaction name="actionStudentInfoByRecord"/>
+    <addaction name="actionStudentsCurrentTask"/>
+    <addaction name="actionStudentsVariantAndScoreSum"/>
+    <addaction name="actionStudentsUnassignedTask"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
      <string>О программе</string>
     </property>
+    <addaction name="action"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuReports"/>
@@ -97,30 +96,52 @@
   </action>
   <action name="actionExit">
    <property name="text">
-    <string>Exit</string>
+    <string>Выход</string>
    </property>
   </action>
-  <action name="actionStudent_info_by_recod_number">
+  <action name="actionStudentInfoByRecord">
    <property name="text">
     <string>Информация о студенте по номеру зачётки...</string>
    </property>
   </action>
-  <action name="actionStudents_with_current_task_number">
+  <action name="actionStudentsCurrentTask">
    <property name="text">
     <string>Студенты с заданием номер...</string>
    </property>
   </action>
-  <action name="actionStudents_with_current_variant_and_score_sum">
+  <action name="actionStudentsVariantAndScoreSum">
    <property name="text">
     <string>Студенты с требуемым вариантом и оценкой выше...</string>
    </property>
   </action>
-  <action name="actionStudents_with_current_unassigned_task">
+  <action name="actionStudentsUnassignedTask">
    <property name="text">
     <string>Студенты с невыданным заданием номер...</string>
    </property>
   </action>
+  <action name="action">
+   <property name="text">
+    <string>Об авторе</string>
+   </property>
+  </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>525</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

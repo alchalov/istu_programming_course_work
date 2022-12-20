@@ -2,78 +2,130 @@
 
 namespace alchalov {
 
-// конструктор пустой записи
+// конструктор по умолчанию - пустая запись
 StudentTasks::StudentTasks():
-    recordNumber(0),
+    recordNumber(""),
     studentName(""),
-    variantNumber(0),
-    tasks({new Task, new Task, new Task}){};
+    variantNumber(""),
+    task1Status(""), task1Score(""),
+    task2Status(""), task2Score(""),
+    task3Status(""), task3Score("")
+    {};
 
 // конструктор полной информации о студенте
 StudentTasks::StudentTasks(
-        const int recordNumber,
-        const std::string studentName,
-        const int variantNumber,
-        const std::vector<Task*> tasks):
-    recordNumber(recordNumber),
-    studentName(studentName),
-    variantNumber(variantNumber),
-    tasks(tasks) {};
+        const QString recordNumber,
+        const QString studentName,
+        const QString variantNumber,
+        const QString task1Status,
+        const QString task1Score,
+        const QString task2Status,
+        const QString task2Score,
+        const QString task3Status,
+        const QString task3Score):
+        recordNumber(recordNumber),
+        studentName(studentName),
+        variantNumber(variantNumber),
+        task1Status(task1Status), task1Score(task1Score),
+        task2Status(task2Status), task2Score(task2Score),
+        task3Status(task3Status), task3Score(task3Score)
+        {};
 
-void StudentTasks::setRecordNumber(const int _recordNumber)
+void StudentTasks::setRecordNumber(const QString _recordNumber)
 {
     recordNumber=_recordNumber;
 }
 
-void StudentTasks::setStudentName(const std::string _studentName)
+void StudentTasks::setStudentName(const QString _studentName)
 {
     studentName=_studentName;
 }
 
-void StudentTasks::setVariantNumber(const int _variantNumber)
+void StudentTasks::setVariantNumber(const QString _variantNumber)
 {
     variantNumber = _variantNumber;
 }
 
-void StudentTasks::setTasks(const std::vector<Task*> _tasks)
+void StudentTasks::setTask1Status(const QString _taskStatus)
 {
-    tasks = _tasks;
+    task1Status = _taskStatus;
 }
 
-void StudentTasks::setAssignStatusOfTask(const int taskNumber, const bool status)
+void StudentTasks::setTask1Score(const QString _score)
 {
-    tasks[taskNumber]->setStatus(status);
+    task1Score = _score;
 }
 
-void StudentTasks::setScoreOfTask(const int taskNumber, const int score)
+void StudentTasks::setTask2Status(const QString _taskStatus)
 {
-    tasks[taskNumber]->setScore(score);
+    task1Status = _taskStatus;
 }
 
-int StudentTasks::getRecordNumber()
+void StudentTasks::setTask2Score(const QString _score)
+{
+    task1Score = _score;
+}
+
+void StudentTasks::setTask3Status(const QString _taskStatus)
+{
+    task1Status = _taskStatus;
+}
+
+void StudentTasks::setTask3Score(const QString _score)
+{
+    task1Score = _score;
+}
+
+QString StudentTasks::getRecordNumber()
 {
     return recordNumber;
 }
 
-std::string StudentTasks::getStudentName()
+QString StudentTasks::getStudentName()
 {
     return studentName;
 }
 
-int StudentTasks::getVariantNumber()
+QString StudentTasks::getVariantNumber()
 {
     return variantNumber;
 }
 
-bool StudentTasks::getAssignStatusOfTask(const int taskNumber)
+QString StudentTasks::getTask1Status()
 {
-    return tasks[taskNumber]->isAssigned();
+    return task1Status;
 }
 
-
-int StudentTasks::getScoreOfTask(int taskNumber)
+QString StudentTasks::getTask1Score()
 {
-    return tasks[taskNumber]->getScore();
+    return task1Score;
+}
+
+QString StudentTasks::getTask2Status()
+{
+    return task2Status;
+}
+
+QString StudentTasks::getTask2Score()
+{
+    return task2Score;
+}
+
+QString StudentTasks::getTask3Status()
+{
+    return task3Status;
+}
+
+QString StudentTasks::getTask3Score()
+{
+    return task3Score;
+}
+
+QString StudentTasks::sumScores(){
+
+    int sum = getTask1Score().toInt() + getTask2Score().toInt() + getTask3Score().toInt();
+    QString sumScores = QStringLiteral("%1").arg(sum);
+    return sumScores;
 }
 
 } // namespace alchalov
