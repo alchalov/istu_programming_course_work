@@ -99,7 +99,7 @@ void MainWindow::on_actionOpen_triggered()   // Открытие файла
 
 void MainWindow::on_actionStudentInfoByRecord_triggered()
 {
-    DialogStudentByRecord dialog;
+    DialogStudentByRecord dialog(this, studentTasksList);
     dialog.exec();
 }
 
