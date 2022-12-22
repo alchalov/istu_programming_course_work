@@ -9,18 +9,30 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    dialogabout.cpp \
     dialogstudentbyrecord.cpp \
+    dialogstudentbytask.cpp \
+    dialogstudentbyunassignedtask.cpp \
+    dialogstudentbyvariantandsumscore.cpp \
     main.cpp \
     mainwindow.cpp \
     studenttasks.cpp
 
 HEADERS += \
+    dialogabout.h \
     dialogstudentbyrecord.h \
+    dialogstudentbytask.h \
+    dialogstudentbyunassignedtask.h \
+    dialogstudentbyvariantandsumscore.h \
     mainwindow.h \
     studenttasks.h
 
 FORMS += \
+    dialogabout.ui \
     dialogstudentbyrecord.ui \
+    dialogstudentbytask.ui \
+    dialogstudentbyunassignedtask.ui \
+    dialogstudentbyvariantandsumscore.ui \
     mainwindow.ui
 
 TRANSLATIONS += \

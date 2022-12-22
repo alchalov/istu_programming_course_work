@@ -5,6 +5,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "dialogstudentbyrecord.h"
+#include "dialogstudentbytask.h"
+#include "dialogstudentbyvariantandsumscore.h"
+#include "dialogstudentbyunassignedtask.h"
+#include "dialogabout.h"
 
 namespace alchalov {
 
@@ -105,24 +109,26 @@ void MainWindow::on_actionStudentInfoByRecord_triggered()
 
 void MainWindow::on_actionStudentsCurrentTask_triggered()
 {
-
+    DialogStudentByTask dialog(this, studentTasksList);
+    dialog.exec();
 }
 
 void MainWindow::on_actionStudentsVariantAndScoreSum_triggered()
 {
-
+    DialogStudentByVariantAndSumScore dialog(this, studentTasksList);
+    dialog.exec();
 }
 
 void MainWindow::on_actionStudentsUnassignedTask_triggered()
 {
-
-
+    DialogStudentByUnassignedTask dialog(this, studentTasksList);
+    dialog.exec();
 }
 
 void MainWindow::on_actionAbout_triggered()
 {
-    QMessageBox::information(this, "Информация", "<p><b>Курсовой проект</b></p> <p>по дисцеплине \"Программирование\" </p> "
-                                                 "Вариант № 6 <p>Выполнил: Чалов А.Л. гр. ЭВМбз-18-1.");
+    DialogAbout about;
+    about.exec();
 }
 
 void MainWindow::addTableLine(int lineNumber)

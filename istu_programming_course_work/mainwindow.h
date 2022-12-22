@@ -28,17 +28,15 @@ private:
     QTableWidgetItem *item;
 
     void addTableLine(int);
+    void about();
 
 private slots:
     void on_actionOpen_triggered();
-
     void on_actionStudentInfoByRecord_triggered();
     void on_actionStudentsCurrentTask_triggered();
     void on_actionStudentsVariantAndScoreSum_triggered();
     void on_actionStudentsUnassignedTask_triggered();
-
     void on_actionAbout_triggered();
-
 };
 
 } // namespace alchalov

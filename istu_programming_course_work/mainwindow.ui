@@ -67,7 +67,7 @@
     <property name="title">
      <string>О программе</string>
     </property>
-    <addaction name="action"/>
+    <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuReports"/>
@@ -124,24 +124,12 @@
     <string>Об авторе</string>
    </property>
   </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>Об авторе</string>
+   </property>
+  </action>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>actionExit</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>525</x>
-     <y>332</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
