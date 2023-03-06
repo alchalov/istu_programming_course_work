@@ -58,7 +58,7 @@ void DialogStudentByTask::on_findButton_clicked()
             ui->label2->setText("Студенты выполнившие задание №1");
 
 
-            if (studentTasks.getTask1Status() == "1")
+            if (studentTasks.getTask1Status() == "1" || studentTasks.getTask1Score() != "0")
             {
                 ui->tableWidget->setRowCount(lineNumber+1);
                 item = new QTableWidgetItem(studentTasks.getRecordNumber());
@@ -77,9 +77,9 @@ void DialogStudentByTask::on_findButton_clicked()
     case 2:
         foreach(studentTasks, studentTaskLlist)
         {
-            ui->label2->setText("Студенты выполнившие задание №2");
+            ui->label2->setText("Студенты выполнившие задание №2" );
 
-            if (studentTasks.getTask2Status() == "1")
+            if (studentTasks.getTask2Status() == "1" || studentTasks.getTask2Score() != "0")
             {
                 ui->tableWidget->setRowCount(lineNumber+1);
                 item = new QTableWidgetItem(studentTasks.getRecordNumber());
@@ -97,9 +97,9 @@ void DialogStudentByTask::on_findButton_clicked()
     case 3:
         foreach(studentTasks, studentTaskLlist)
         {
-            ui->label2->setText("Студенты выполнившие задание №3");
+            ui->label2->setText("Студенты выполнившие задание №3" );
 
-            if (studentTasks.getTask3Status() == "1")
+            if (studentTasks.getTask3Status() == "1" || studentTasks.getTask3Score() != "0")
             {
                 ui->tableWidget->setRowCount(lineNumber+1);
                 item = new QTableWidgetItem(studentTasks.getRecordNumber());
