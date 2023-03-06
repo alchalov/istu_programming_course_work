@@ -1,6 +1,7 @@
 #include <QFileDialog>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QTableWidget>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -20,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);  // устанавливаем выделение целой строки
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch); // настраиваем отображения столбцов
-    ui->tableWidget->setColumnCount(9);                    //устанавливаем количество столбцов в таблице
+    ui->tableWidget->setColumnCount(10);                    //устанавливаем количество столбцов в таблице
     ui->tableWidget->setHorizontalHeaderLabels(QStringList()
                                                <<"Номер\nзачётки"
                                                <<"Фамилия И.О."
@@ -30,10 +31,11 @@ MainWindow::MainWindow(QWidget *parent)
                                                <<"Задание 2"
                                                <<"Оценка 2"
                                                <<"Задание 3"
-                                               <<"Оценка 3");
+                                               <<"Оценка 3"
+                                               <<"Сумма баллов");
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-    // инициализируем пустую задачу
+    // инициализируем пустуой список задачи студентов задачу
     studentTasks = StudentTasks();
     addTableLine(0);
 }
@@ -133,6 +135,8 @@ void MainWindow::on_actionAbout_triggered()
 
 void MainWindow::addTableLine(int lineNumber)
 {
+    QTableWidgetItem *item;
+
     item = new QTableWidgetItem(studentTasks.getRecordNumber());
     ui->tableWidget->setItem(lineNumber,0,item);
 
@@ -157,7 +161,7 @@ void MainWindow::addTableLine(int lineNumber)
     item = new QTableWidgetItem(studentTasks.getTask3Status());
     ui->tableWidget->setItem(lineNumber,7,item);
 
-    item = new QTableWidgetItem(studentTasks.getTask3Status());
+    item = new QTableWidgetItem(studentTasks.getTask3Score());
     ui->tableWidget->setItem(lineNumber,8,item);
 
     item = new QTableWidgetItem(studentTasks.sumScores());

@@ -22,6 +22,14 @@ public:
 
 private:
     Ui::DialogStudentByVariantAndSumScore *ui;
+    QList<StudentTasks> studentTaskLlist;
+    StudentTasks studentTasks;
+    bool statusTextChanged();
+
+private slots:
+    void on_lineEditVariant_textChanged();
+    void on_lineEditSum_textChanged();
+    void on_findButton_clicked();
 };
 
 } // namespace alchalov

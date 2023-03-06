@@ -3,6 +3,7 @@
 
 namespace alchalov {
 
+// Окно со сведениям о программе
 DialogAbout::DialogAbout(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DialogAbout)
@@ -15,7 +16,7 @@ DialogAbout::DialogAbout(QWidget *parent) :
                        "<p>Выполнил: студент гр. ЭВМбз18-1</p>"
                        "<p>Александр Чалов</p>"
                        "<p>Зачётная книжка: №18150642</p>"
-                      );
+                       );
 }
 
 DialogAbout::~DialogAbout()

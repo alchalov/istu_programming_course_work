@@ -6,24 +6,91 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>312</width>
     <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Список студентов с заданным номером варианта, имеющих заданную сумму баллов по всем 3 задачам</string>
   </property>
-  <widget class="QPushButton" name="closeButton">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>50</y>
-     <width>80</width>
-     <height>25</height>
+     <x>10</x>
+     <y>10</y>
+     <width>91</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Закрыть</string>
+    <string>Номер варианта</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Сумма баллов</string>
+   </property>
+  </widget>
+  <widget class="QSplitter" name="splitter">
+   <property name="geometry">
+    <rect>
+     <x>106</x>
+     <y>10</y>
+     <width>108</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <widget class="QLineEdit" name="lineEditVariant"/>
+   <widget class="QLineEdit" name="lineEditSum"/>
+  </widget>
+  <widget class="QSplitter" name="splitter_2">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>10</y>
+     <width>80</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <widget class="QPushButton" name="findButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Найти</string>
+    </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="closeButton">
+    <property name="text">
+     <string>Закрыть</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>291</width>
+     <height>221</height>
+    </rect>
    </property>
   </widget>
  </widget>

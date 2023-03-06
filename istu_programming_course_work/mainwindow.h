@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QTableWidget>
 #include <QList>
 
 #include "studenttasks.h"
@@ -25,7 +24,6 @@ private:
     Ui::MainWindow *ui;    
     StudentTasks studentTasks;
     QList<StudentTasks> studentTasksList;
-    QTableWidgetItem *item;
 
     void addTableLine(int);
     void about();

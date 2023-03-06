@@ -22,6 +22,12 @@ public:
 
 private:
     Ui::DialogStudentByUnassignedTask *ui;
+    QList<StudentTasks> studentTaskLlist;
+    StudentTasks studentTasks;
+
+private slots:
+    void on_lineEdit_textChanged();
+    void on_findButton_clicked();
 };
 
 } // namespace alchalov

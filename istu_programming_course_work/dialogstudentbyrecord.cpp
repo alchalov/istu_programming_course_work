@@ -3,6 +3,7 @@
 
 namespace alchalov {
 
+
 DialogStudentByRecord::DialogStudentByRecord(QWidget *parent, const QList<StudentTasks>& _studentTasksList) :
     QDialog(parent),
     ui(new Ui::DialogStudentByRecord)
@@ -32,6 +33,8 @@ void DialogStudentByRecord::on_findButton_clicked()
     QString find = "";
 
     find = ui->lineEdit->text();
+
+    // Ищем студента с номером зачётки и выводим информацию о нём
     foreach(studentTasks, studentTaskLlist){
         if (studentTasks.getRecordNumber() == find)
         {
